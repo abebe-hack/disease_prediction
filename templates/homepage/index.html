@@ -1,0 +1,348 @@
+﻿
+{% extends "basic.html" %}
+{% load static %}
+
+ 
+	{% block head %}
+
+
+{% endblock %}
+
+
+
+
+{% block body %}
+
+
+    
+<div class="jumbotron">
+    <h1 class="display-4">Be your own doctor...</h1>
+    <p class="lead">
+            It might have happened so many times that you or someone yours need doctor’s help immediately,
+             but they are not available due to some reasons.The Disease Prediction system is an end user
+              support and online consultation project. Here, we propose a web application that allow users 
+              to get instant guidance on their disease through an intelligent system. The application is 
+              fed with various details and the disease associated with those details.The application allows
+               user to share their disease related issues.It then processes user specific details to check 
+               for various illness that could be associated with it.Here we use some intelligent data mining
+                techniques to guess the most accurate illness that could be associated with patient’s details.
+                Based on result, patient can contact doctor accordingly for further treatment.
+    <br>
+    <br>
+
+    በጣም ብዙ ጊዜ ተከስቶ ሊሆን ይችላል እርስዎ ወይም የእርስዎ የሆነ ሰው ወዲያውኑ የዶክተር እርዳታ
+     ይፈልጋሉ ነገር ግን በአንዳንድ ምክንያቶች ሊገኙ አይችሉም። የበሽታ ትንበያ ስርዓት የዋና ተጠቃሚ
+      ድጋፍ እና የመስመር ላይ የማማከር ፕሮጀክት ነው። እዚህ፣ ተጠቃሚዎች በህመማቸው ላይ ፈጣን 
+      መመሪያን በብልህነት ስርዓት እንዲያገኙ የሚያስችል የድር መተግበሪያን እናቀርባለን። አፕሊኬሽኑ
+       በተለያዩ ዝርዝሮች እና ከነዚህ ዝርዝሮች ጋር በተዛመደ በሽታ ይመገባል። አፕሊኬሽኑ ተጠቃሚው
+        ከበሽታ ጋር የተያያዙ ጉዳዮቻቸውን እንዲያካፍል ያስችለዋል። ከዚያም ከሱ ጋር ተያይዘው የሚመጡ
+         የተለያዩ ህመሞችን ለመመርመር በተጠቃሚ-ተኮር ዝርዝሮችን ያዘጋጃል። እዚህ ከታካሚ ዝርዝሮች 
+         ጋር ሊዛመድ የሚችለውን በጣም ትክክለኛውን በሽታ ለመገመት አንዳንድ የማሰብ ችሎታ ያላቸው 
+         የመረጃ ማምረቻ ዘዴዎችን እንጠቀማለን። በውጤቱ ላይ በመመርኮዝ ለበለጠ ህክምና በሽተኛው ሐኪሙን ማነጋገር ይችላል.
+                
+  
+     {% if user.is_authenticated %}
+
+     
+     {% else %}
+
+      <p class="lead">
+
+        
+      <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal" data-target=".bd-example-modal-lg">Get started</button>
+      </p>
+    
+
+</div>
+
+<br><br><br>
+<div class="container mt-5 mb-3" style="width:fit-content;">
+      <center>
+        <h1>Sign-In  As</h1>
+        </center>
+      
+      
+      <form>
+          <div class="container mt-5 mb-5">
+       <div class="row">
+          <div class="col">
+             <a href="{% url 'sign_in_admin' %}">
+      <img  alt="admin" src="{% static 'homepage/admin.png' %}"  class="img">
+      </a>
+          </div>
+      
+          <div class="col">
+      <a href="{% url 'sign_in_doctor' %}">
+      <img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
+      </a>
+          </div>
+      
+          <div class="col">
+      <a href="{% url 'sign_in_patient' %}">
+      <img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
+      </a>
+          </div>
+        </div>
+        </div>
+      </form>
+</div>
+
+
+    
+
+    {% endif %}
+
+<br><br>
+
+
+
+
+<!-- Large modal -->
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+   
+<center>
+  <h1>Sign-In  As</h1>
+  </center>
+<br><br>
+
+<center>
+<form>
+    <div class="container mt-5 mb-5">
+ <div class="row">
+    <div class="col">
+       <a href="{% url 'sign_in_admin' %}">
+<img  alt="admin" src="{% static 'homepage/admin.png' %}"  class="img">
+</a>
+    </div>
+
+    <div class="col">
+<a href="{% url 'sign_in_doctor' %}">
+<img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
+</a>
+    </div>
+
+    <div class="col">
+<a href="{% url 'sign_in_patient' %}">
+<img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
+</a>
+    </div>
+  </div>
+  </div>
+</form>
+</center>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- Large modal -->
+
+<div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+   
+<center>
+  <h1>Sign-Up  As</h1>
+  </center>
+<br><br>
+
+<center>
+<form>
+    <div class="container mt-5 mb-5 ml-5 mr-5">
+ <div class="row">
+
+    <div class="col">
+<a href="{% url 'signup_doctor' %}">
+<img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
+</a>
+    </div>
+
+    <div class="col">
+<a href="{% url 'signup_patient' %}">
+<img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
+</a>
+    </div>
+  </div>
+  </div>
+</form>
+</center>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<br><br><br><br>
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ 
+
+
+
+
+
+</div>
+
+
+
+<!-- Remove the container if you want to extend the Footer to full width. -->
+
+
+  <!-- Footer -->
+  <footer
+          class="text-center text-lg-start text-white"
+          style="background-color: #1c2331"
+          >
+    <!-- Section: Social media -->
+    <section
+             class="d-flex justify-content-between p-4"
+             style="background-color: #6351ce"
+             >
+      <!-- Left -->
+
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold">SELF TEST</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              በጣም ብዙ ጊዜ ተከስቶ ሊሆን ይችላል እርስዎ ወይም የእርስዎ የሆነ ሰው ወዲያውኑ የዶክተር እርዳታ ይፈልጋሉ 
+              ነገር ግን በአንዳንድ ምክንያቶች ሊገኙ አይችሉም። የበሽታ ትንበያ ስርዓት የዋና ተጠቃሚ ድጋፍ እና የመስመር ላይ የማማከር ፕሮጀክት ነው።
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">USEFUL LINKS</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="https://www.facebook.com/" class="text-white">FACEBOOK</a>
+            </p>
+            <p>
+              <a href="https://t.me/+RuSqULl-aVBaX1Ha" class="text-white">TELEGRAM</a>
+            </p>
+            <p>
+              <a href="https://www.linkedin.com/in/abebe-zewde-96871b19a/" class="text-white">LINKEDIN</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p><i class="fas fa-home mr-3"></i> ETHIOPIA, DILLA, 2022</p>
+            <p><i class="fas fa-envelope mr-3"></i> MUM93494@GMAIL.COM.com</p>
+            <p><i class="fas fa-phone mr-3"></i> +251934942672</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2020 Copyright:
+      <a class="text-white" href="https://selftest.com/"
+         >selftest.com</a
+        >
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+<!-- End of .container -->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    
+
+
+
+
+    
+{% endblock %}
